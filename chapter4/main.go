@@ -40,19 +40,60 @@ func defineMultiVars() {
 		b = 15
 		c = 6
 	)
-
 	fmt.Println(a, b, c)
 }
 
+func multiplyByTwo() {
+	var input float64
+	fmt.Print("Enter a number: ")
+	fmt.Scanf("%f", &input)
+	
+	output := input * 2
+
+	fmt.Println(output)
+}
+
+func assignPlus() {
+	x := 5
+	x += 1
+	fmt.Println(x)
+}
+
+func fToC() {
+	var input float64
+	fmt.Print("Enter a number: ")
+	fmt.Scanf("%f", &input)
+
+	output := (input - 32) * 5/9
+	fmt.Println(output) 
+}
+
+func feetToMeters() {
+	var input float64
+	fmt.Print("Enter a number: ")
+	fmt.Scanf("%f", &input)
+
+	output := input * 0.3048
+	fmt.Println(output)
+}
+
 func main() {
-	fmt.Println("-- Output a string --")
+	fmt.Println("\n-- Output a string --")
 	outString()
-	fmt.Println("-- String Equality --")
+	fmt.Println("\n-- String Equality --")
 	stringEquality()
-	fmt.Println("-- Name a var --")
+	fmt.Println("\n-- Name a var --")
 	nameVar()
-	fmt.Println("-- Name Constant --")
+	fmt.Println("\n-- Name Constant --")
 	constTest()
-	fmt.Println("-- Define multi vars --")
+	fmt.Println("\n-- Define multi vars --")
 	defineMultiVars()
+	fmt.Println("\n-- Multiply by two --")
+	// multiplyByTwo()
+	fmt.Println("\n-- Assign Plus --")
+	assignPlus()
+	fmt.Println("\n-- Fahrenheight to Celsius --")
+	fToC()
+	fmt.Println("\n-- Feet to meters --")
+	feetToMeters()
 }
