@@ -29,6 +29,19 @@ func distance(x1, x2, y1, y2 float64) float64 {
 	return (a*a + b*b)
 }
 
+type Person struct {
+	Name string
+}
+
+type Android struct {
+	Person
+	Model string
+}
+
+func (p *Person) Talk() {
+	fmt.Println("Hello my is", p.Name)
+}
+
 func main() {
 	c := Circle{0, 0, 5}
 	fmt.Println(c.r) // Get the value
@@ -36,4 +49,13 @@ func main() {
 
 	r := Rectangle{0, 10, 0, 10}
 	fmt.Println(r.area())
+
+	fmt.Println("\n-- Android/Person --")
+	a := &Android{
+		Person: Person{
+			Name: "Terminator",
+		},
+		Model: "T-1000",
+	}
+	a.Person.Talk()
 }
