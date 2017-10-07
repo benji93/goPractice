@@ -41,6 +41,18 @@ func fizzBuzz() {
 	}
 }
 
+func divideBy() {
+	var input int
+	fmt.Print("What number do you want to divide by: ")
+	fmt.Scanf("%d", &input)
+
+	for i := 1; i <= 100; i++ {
+		if i % input == 0 {
+			fmt.Println(i)
+		}
+	}
+}
+
 func main() {
 	fmt.Println("-- For1 --")
 	for1()
@@ -50,4 +62,6 @@ func main() {
 	ifState()
 	fmt.Println("\n-- FizzBuzz --")
 	fizzBuzz()
+	fmt.Println("\n-- DivideBy --")
+	divideBy()
 }
