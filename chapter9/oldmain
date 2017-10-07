@@ -1,0 +1,32 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func distance(x1, y1, x2, y2 float64) float64 {
+	a := x1 - x2
+	b := y1 - y2
+	return math.Sqrt(a*a + b*b)
+}
+
+func rectangleArea(x1, x2, y1, y2 float64) float64 {
+	l := distance(x1, x2, y1, y2)
+	w := distance(x1, x2, y1, y2)
+	return l * w
+}
+
+func circleArea(x, y, r float64) float64 {
+	return math.Pi * r*r
+}
+
+func main() {
+	var rx1, rx2 float64 = 0, 0
+	var ry1, ry2 float64 = 10, 10
+	
+	var cx, cy, cr float64 = 0, 0, 5
+
+	fmt.Println(rectangleArea(rx1, rx2, ry1, ry2))
+	fmt.Println(circleArea(cx, cy, cr))
+}
