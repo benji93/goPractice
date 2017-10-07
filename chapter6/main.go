@@ -41,6 +41,17 @@ func arrayWithForSpecial() {
 	fmt.Println(total / float64(len(x)))
 }
 
+func simpleSlice() {
+	// var x []float64 // []
+	// x := make([]float64, 5) // [0, 0, 0, 0, 0]
+	// x := make([]float64, 5, 10) // [0, 0, 0, 0, 0]
+	// fmt.Println(x)
+
+	arr := [5]float64{1,2,3,4,5} // [1, 2, 3, 4, 5]
+	x := arr[0:3] // [1, 2, 3]
+	fmt.Println(x)
+}
+
 func main() {
 	fmt.Println("-- Array1 --")
 	array1()
@@ -48,4 +59,6 @@ func main() {
 	arrayWithFor()
 	fmt.Println("-- Special for --")
 	arrayWithForSpecial()
+	fmt.Println("-- Simple Slice --")
+	simpleSlice()
 }
