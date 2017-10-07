@@ -80,6 +80,47 @@ func simpleMap() {
 	fmt.Println(y)
 }
 
+func multiMap() {
+	elements := map[string]map[string]string{
+		"H": map[string]string{
+			"name": "Hyrdrogen",
+			"state": "Gas",
+		},
+		"He": map[string]string{
+			"name": "Helium",
+			"state": "Gas",
+		},
+		"Li": map[string]string{
+			"name": "Lithium",
+			"State": "Solid",
+		},
+	}
+
+	if el, ok := elements["Li"]; ok {
+		fmt.Println(el)
+	}
+	
+	// fmt.Println(elements)
+}
+
+func getSmallestNum() {
+	x := []int{
+		48,96,86,68,
+		57,82,63,70,
+		37,34,83,27,
+		19,97, 9,17,
+	}
+
+	var lowest int = x[0] // Set lowest to the first value in the array
+	for _, value := range x {
+		if value < lowest {
+			lowest = value
+		}
+	}
+
+	fmt.Println(total)
+}
+
 func main() {
 	fmt.Println("-- Array1 --")
 	array1()
@@ -95,4 +136,8 @@ func main() {
 	sliceCopy()
 	fmt.Println("-- SimpleMap --")
 	simpleMap()
+	fmt.Println("-- MultiMap --")
+	multiMap()
+	fmt.Println("-- Get smallest value --")
+	getSmallestNum()
 }
