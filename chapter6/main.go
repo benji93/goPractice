@@ -52,6 +52,34 @@ func simpleSlice() {
 	fmt.Println(x)
 }
 
+func sliceAppend() {
+	slice1 := []int{1,2,3}
+	slice2 := append(slice1, 4, 5)
+	fmt.Println(slice2)
+}
+
+func sliceCopy() {
+	slice1 := []int{1,2,3}
+	slice2 := make([]int, 2) // Makes an array with a length of two
+	copy(slice2, slice1) // Copy slice1 into slice 2
+	fmt.Println(slice1, slice2)
+}
+
+func simpleMap() {
+	x := make(map[string]int)
+	x["key"] = 10
+	fmt.Println(x["key"])
+
+	y := make(map[int]int)
+	y[1] = 10
+	y[2] = 11
+	y[3] = 13
+	fmt.Println(y)
+	
+	delete(y, 2)
+	fmt.Println(y)
+}
+
 func main() {
 	fmt.Println("-- Array1 --")
 	array1()
@@ -61,4 +89,10 @@ func main() {
 	arrayWithForSpecial()
 	fmt.Println("-- Simple Slice --")
 	simpleSlice()
+	fmt.Println("-- Slice Append --")
+	sliceAppend()
+	fmt.Println("-- Slice Copy --")
+	sliceCopy()
+	fmt.Println("-- SimpleMap --")
+	simpleMap()
 }
