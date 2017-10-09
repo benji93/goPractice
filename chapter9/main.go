@@ -42,6 +42,31 @@ func (p *Person) Talk() {
 	fmt.Println("Hello my is", p.Name)
 }
 
+type Shape interface {
+	area() float64
+}
+
+func totalArea(shapes ...Shape) float64 {
+	var area float64
+	for _, s := range shapes {
+		fmt.Println(s)
+		area += s.area()
+	}
+	return area
+}
+
+type MultiShape struct {
+	shapes []Shape
+}
+
+func (m MultiShape) area() float64 {
+	var area float64
+	for _, s := range m.shapes {
+		area += s.area()
+	}
+	return area
+}
+
 func main() {
 	c := Circle{0, 0, 5}
 	fmt.Println(c.r) // Get the value
@@ -58,4 +83,7 @@ func main() {
 		Model: "T-1000",
 	}
 	a.Person.Talk()
+
+	fmt.Println("\n-- Interface --")
+	fmt.Println(totalArea(&r, &c))
 }
